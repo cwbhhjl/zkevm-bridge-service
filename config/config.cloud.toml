@@ -7,20 +7,21 @@ Database = "postgres"
 User = "test_user"
 Password = "test_password"
 Name = "test_db"
-Host = "zkevm-bridge-db"
-Port = "5435"
+Host = "localhost"
+Port = "5433"
 MaxConns = 20
 
 [Etherman]
-L1URL = "http://zkevm-mock-l1-network:8545"
-L2URLs = ["http://zkevm-node:8123"]
+L1URL = "https://geth_goerli.hermez.io"
+# L1URL = "https://project_id:project_secret@goerli.infura.io/v3/identifier"
+L2URLs = ["http://core-rpc.hermez-grapefruit.local:8123"]
 PrivateKeyPath = "../test/test.keystore"
-PrivateKeyPassword = "testonly"
+PrivateKeyPassword = "fA8W3c4RT48g0FPquCnTutiU"
 
 [Synchronizer]
-SyncInterval = "2s"
+SyncInterval = "5s"
 SyncChunkSize = 100
-GrpcURL = "zkevm-node:61090"
+GrpcURL = "core-broadcast.hermez-grapefruit.local:61090"
 
 [BridgeController]
 Store = "postgres"

@@ -13,7 +13,6 @@ MaxConns = 20
 
 [Etherman]
 L1URL = "https://geth_goerli.hermez.io"
-# L1URL = "https://project_id:project_secret@goerli.infura.io/v3/identifier"
 L2URLs = ["http://core-rpc.hermez-grapefruit.local:8123"]
 PrivateKeyPath = "../test/test.keystore"
 PrivateKeyPassword = "fA8W3c4RT48g0FPquCnTutiU"

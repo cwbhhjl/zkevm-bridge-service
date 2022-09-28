@@ -139,7 +139,7 @@ run: ## runs all services
 	$(RUN_L1_NETWORK)
 	sleep 5
 	$(RUN_NODE)
-	sleep 5
+	sleep 15
 	$(RUN_BRIDGE)
 
 .PHONY: run-mockserver

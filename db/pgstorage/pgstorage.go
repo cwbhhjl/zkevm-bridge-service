@@ -314,7 +314,7 @@ func (p *PostgresStorage) GetGERByDepositCnt(ctx context.Context, networkID uint
 		getGERByLocalExitRootSQL string
 	)
 	if networkID == MainNetworkID {
-		getGERByLocalExitRootSQL = "SELECT e.block_id, e.timestamp, e.global_exit_root, e.exit_roots FROM syncv2.exit_root AS e INNER JOIN mtv2.root AS r ON e.exit_roots[$1] = r.root WHERE r.deposit_cnt > $2 AND e.block_id = 0 ORDER BY r.deposit_cnt ASC LIMIT 1"
+		getGERByLocalExitRootSQL = "SELECT e.block_id, e.timestamp, e.global_exit_root, e.exit_roots FROM syncv2.exit_root AS e INNER JOIN mtv2.root AS r ON e.exit_roots[$1] = r.root WHERE r.deposit_cnt > $2 AND e.block_id > 0 ORDER BY r.deposit_cnt ASC LIMIT 1"
 	} else {
 		getGERByLocalExitRootSQL = "SELECT e.block_id, e.timestamp, e.global_exit_root, e.exit_roots FROM syncv2.exit_root AS e INNER JOIN mtv2.root AS r ON e.exit_roots[$1] = r.root WHERE r.deposit_cnt > $2 AND e.block_id > 0 ORDER BY r.deposit_cnt ASC LIMIT 1"
 	}
